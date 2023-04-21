@@ -1,9 +1,7 @@
 //FCM
+importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js");
 importScripts(
-  "https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"
-);
-importScripts(
-  "https://www.gstatic.com/firebasejs/9.17.1/firebase-messaging-compat.js"
+  "https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"
 );
 
 const firebaseConfig = {
@@ -24,13 +22,13 @@ messaging.onBackgroundMessage((payload) => {
     "[firebase-messaging-sw.js] Received background message ",
     payload
   );
-  const notificationTitle = payload.notification.title;
-  const notificationOptions = {
-    body: payload.notification.body,
-  };
+  // const notificationTitle = payload.notification.title;
+  // const notificationOptions = {
+  //   body: payload.notification.body,
+  // };
 
-  return self.registration.showNotification(
-    notificationTitle,
-    notificationOptions
-  );
+  // return self.registration.showNotification(
+  //   notificationTitle,
+  //   notificationOptions
+  // );
 });
