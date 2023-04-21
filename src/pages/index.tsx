@@ -1,10 +1,12 @@
 import { useAuth } from "@/context/auth";
+import { auth } from "@/firebase/client";
 import {
   requestNotificationsPermissions,
   saveMessagingDeviceToken,
 } from "@/firebase/messaging";
 import { notifyMe } from "@/utils/notify";
 import { sendNotification } from "@/utils/sendNotification";
+import { signOut } from "firebase/auth";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 
@@ -34,6 +36,12 @@ const Home: NextPage = () => {
     }
   };
 
+  const logout = () => {
+    return signOut(auth).then(() => {
+      alert("SignOut!!");
+    });
+  };
+
   if (!fbUser) {
     if (!isLoading) {
       router.push("/login");
@@ -54,6 +62,8 @@ const Home: NextPage = () => {
       >
         Send Notification with FCM
       </button>
+
+      <div onClick={logout}>logout</div>
     </div>
   );
 };
