@@ -1,7 +1,18 @@
+import { useAuth } from "@/context/auth";
 import { notifyMe } from "@/utils/notify";
 import { NextPage } from "next";
+import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { fbUser, isLoading } = useAuth();
+
+  if (!fbUser) {
+    if (!isLoading) {
+      router.push("/login");
+    }
+    return null;
+  }
   return (
     <div className="h-screen w-screen flex justify-center items-center">
       <button
