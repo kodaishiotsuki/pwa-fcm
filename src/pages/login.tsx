@@ -8,7 +8,7 @@ const LoginPage = () => {
         <div className="flex-col items-center">
           <Image
             className="mx-auto mb-5 h-[100px] w-[100px]"
-            src="logo.png"
+            src="vercel.svg"
             alt="Picture of the author"
             width={500}
             height={500}
