@@ -1,9 +1,5 @@
 // server.ts
-import "dotenv/config";
-import {
-  cert,
-  getApps, initializeApp
-} from "firebase-admin/app";
+import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { getMessaging } from "firebase-admin/messaging";
 
