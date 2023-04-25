@@ -53,12 +53,12 @@ const Home: NextPage = () => {
   }
   return (
     <div className="flex h-screen flex-col items-center justify-center gap-10 text-2xl font-bold">
-      <button
+      {/* <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
         onClick={notifyMe}
       >
         Click me to get a notification
-      </button>
+      </button> */}
       <button
         className="rounded-full border-4 border-black px-4 py-2"
         onClick={handleClick}
