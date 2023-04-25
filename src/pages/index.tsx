@@ -6,6 +6,7 @@ import {
 } from "@/firebase/messaging";
 import { notifyMe } from "@/utils/notify";
 import { sendNotification } from "@/utils/sendNotification";
+import { usePushNotifications } from "@/utils/usePushNotifications";
 import { signOut } from "firebase/auth";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
@@ -13,6 +14,8 @@ import { useRouter } from "next/router";
 const Home: NextPage = () => {
   const router = useRouter();
   const { fbUser, isLoading } = useAuth();
+
+  usePushNotifications();
 
   //クリック時に通知を表示
   const handleClick = async () => {

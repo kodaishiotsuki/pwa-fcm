@@ -23,6 +23,7 @@ export const storage = getStorage();
 export const auth = getAuth();
 export const functions = getFunctions();
 export const db = getFirestore();
+
 export let messaging: Messaging | undefined;
 
 if (typeof window !== "undefined") {
